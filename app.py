@@ -12,7 +12,7 @@ def doge(update: Update, context: CallbackContext) -> None:
 
     doge_price_inr = round(doge_price * inr_rate, 4)
     print(doge_price_inr)
-    update.message.reply_text(f'DGGE: {doge_price_inr} INR')
+    update.message.reply_text(f'DOGE: {doge_price_inr} INR')
 
 
 updater = Updater('1598163939:AAHf-__oR8j20yTBnjPkI_DNvJGd3Ww996M')
