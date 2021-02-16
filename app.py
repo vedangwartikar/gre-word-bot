@@ -27,8 +27,6 @@ def vet(update: Update, context: CallbackContext) -> None:
     print(vet_price_inr)
     update.message.reply_text(f'VET: {vet_price_inr} INR')
 
-updater = Updater('1657397986:AAEzFf5thjYPao8rFLXFGbB_FRW6K19FgBo')
-
 def verge(update: Update, context: CallbackContext) -> None:
     yahoo_financials = YahooFinancials('XVG-USD')
     verge_price = yahoo_financials.get_current_price()
@@ -40,7 +38,7 @@ def verge(update: Update, context: CallbackContext) -> None:
     print(verge_price_inr)
     update.message.reply_text(f'VERGE: {verge_price_inr} INR')
 
-updater = Updater('1657397986:AAEzFf5thjYPao8rFLXFGbB_FRW6K19FgBo')
+updater = Updater('1598163939:AAHf-__oR8j20yTBnjPkI_DNvJGd3Ww996M')
 
 updater.dispatcher.add_handler(CommandHandler('doge', doge))
 updater.dispatcher.add_handler(CommandHandler('vet', vet))
