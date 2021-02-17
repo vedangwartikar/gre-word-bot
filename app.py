@@ -38,11 +38,15 @@ def verge(update: Update, context: CallbackContext) -> None:
     print(verge_price_inr)
     update.message.reply_text(f'VERGE: {verge_price_inr} INR')
 
+def nice(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text('6*9+6+9=69')
+
 updater = Updater('1598163939:AAHf-__oR8j20yTBnjPkI_DNvJGd3Ww996M')
 
 updater.dispatcher.add_handler(CommandHandler('doge', doge))
 updater.dispatcher.add_handler(CommandHandler('vet', vet))
 updater.dispatcher.add_handler(CommandHandler('verge', verge))
+updater.dispatcher.add_handler(CommandHandler('nice', nice))
 
 updater.start_polling()
 updater.idle()
