@@ -38,6 +38,17 @@ def verge(update: Update, context: CallbackContext) -> None:
     print(verge_price_inr)
     update.message.reply_text(f'VERGE: {verge_price_inr} INR')
 
+def bat(update: Update, context: CallbackContext) -> None:
+    yahoo_financials = YahooFinancials('BAT-USD')
+    bat_price = yahoo_financials.get_current_price()
+
+    c = CurrencyRates()
+    inr_rate = c.get_rate('USD', 'INR')
+
+    bat_price_inr = round(bat_price * inr_rate, 4)
+    print(bat_price_inr)
+    update.message.reply_text(f'BAT: {bat_price_inr} INR')
+
 def nice(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('6*9+6+9=69')
 
@@ -47,6 +58,7 @@ updater.dispatcher.add_handler(CommandHandler('doge', doge))
 updater.dispatcher.add_handler(CommandHandler('vet', vet))
 updater.dispatcher.add_handler(CommandHandler('verge', verge))
 updater.dispatcher.add_handler(CommandHandler('nice', nice))
+updater.dispatcher.add_handler(CommandHandler('bat', bat))
 
 updater.start_polling()
 updater.idle()
