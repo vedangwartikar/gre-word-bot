@@ -1,2 +1,2 @@
-# dogecoin-updates-bot
-Dogecoin updates through Telegram Bot
+# gre-word-bot
+Telegram Bot for GRE words
