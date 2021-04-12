@@ -50,6 +50,39 @@ def bat(update: Update, context: CallbackContext) -> None:
     print(bat_price_inr)
     update.message.reply_text(f'BAT: {bat_price_inr} INR')
 
+def eth(update: Update, context: CallbackContext) -> None:
+    yahoo_financials = YahooFinancials('ETH-USD')
+    eth_price = yahoo_financials.get_current_price()
+
+    c = CurrencyRates()
+    inr_rate = c.get_rate('USD', 'INR')
+
+    eth_price_inr = round(eth_price * inr_rate, 4)
+    print(eth_price_inr)
+    update.message.reply_text(f'ETH: {eth_price_inr} INR')
+
+def iost(update: Update, context: CallbackContext) -> None:
+    yahoo_financials = YahooFinancials('IOST-USD')
+    iost_price = yahoo_financials.get_current_price()
+
+    c = CurrencyRates()
+    inr_rate = c.get_rate('USD', 'INR')
+
+    iost_price_inr = round(iost_price * inr_rate, 4)
+    print(iost_price_inr)
+    update.message.reply_text(f'ETH: {iost_price_inr} INR')
+
+def bnb(update: Update, context: CallbackContext) -> None:
+    yahoo_financials = YahooFinancials('BNB-USD')
+    bnb_price = yahoo_financials.get_current_price()
+
+    c = CurrencyRates()
+    inr_rate = c.get_rate('USD', 'INR')
+
+    bnb_price_inr = round(bnb_price * inr_rate, 4)
+    print(bnb_price_inr)
+    update.message.reply_text(f'ETH: {bnb_price_inr} INR')
+
 def nice(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('6*9+6+9=69')
 
@@ -72,7 +105,9 @@ updater.dispatcher.add_handler(CommandHandler('doge', doge))
 updater.dispatcher.add_handler(CommandHandler('vet', vet))
 updater.dispatcher.add_handler(CommandHandler('verge', verge))
 updater.dispatcher.add_handler(CommandHandler('nice', nice))
-updater.dispatcher.add_handler(CommandHandler('bat', bat))
+updater.dispatcher.add_handler(CommandHandler('eth', eth))
+updater.dispatcher.add_handler(CommandHandler('iost', iost))
+updater.dispatcher.add_handler(CommandHandler('bnb', bnb))
 updater.dispatcher.add_handler(CommandHandler('word', word))
 
 updater.start_polling()
