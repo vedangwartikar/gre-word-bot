@@ -1,4 +1,4 @@
-<h1 align="center">Automation of Bulk PCs using NLP and Slack API</h1>
+<h1 align="center">GRE Word Bot</h1>
 
 Boost your GRE vocabulary with this bot. It gives you words (and their meanings, duh) from the Magoosh dataset.
 
